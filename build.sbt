@@ -12,8 +12,9 @@ libraryDependencies ++= Seq(
   cache,
   ws,
   "org.webjars" %% "webjars-play" % "2.3.0-2",
-  "org.webjars" % "angularjs" % "1.1.5-1",
+  "org.webjars" % "angularjs" % "1.3.0",
   "org.webjars" % "bootstrap" % "2.3.2",
+  "org.webjars" % "jquery" % "2.1.1",
   "org.scalatest" %% "scalatest" % "2.2.1" % "test",
   "junit" % "junit" % "4.11" % "test",
   "com.novocode" % "junit-interface" % "0.7" % "test->default"
