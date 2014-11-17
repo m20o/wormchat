@@ -1,0 +1,22 @@
+[class*="col-"] {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #eee;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid #ddd;
+    border: 1px solid rgba(46, 15, 83, 0.56);
+}
+
+.other-msg {
+    padding: 10px;
+    /*width: 400px;*/
+    background: #EEEEEE;
+    border: 1px solid #333333;
+}
+
+.me-msg {
+    padding: 20px;
+    /* width: 400px */;
+    background: rgba(141, 199, 209, 0.19);
+    border: 1px solid #333333;
+}

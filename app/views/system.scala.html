@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+
+        <title>Starter Template for Bootstrap</title>
+
+            <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" rel="stylesheet" href="@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css"))">
+
+            <!-- Custom styles for this template -->
+        <link href="@routes.Assets.at("stylesheets/starter-template.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("stylesheets/grid.css")" rel="stylesheet">
+
+        <script src="@routes.WebJarAssets.at(WebJarAssets.locate("jquery.js"))"></script>
+        <script src="@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.js"))"></script>
+        <script src="@routes.WebJarAssets.at(WebJarAssets.locate("angular.js"))"></script>
+        <script src="@routes.WebJarAssets.at(WebJarAssets.locate("angular-route.js"))"></script>
+        <script src="@routes.Assets.at("javascripts/application.js")"></script>
+        <script src="@routes.Assets.at("javascripts/room/controller.js")"></script>
+
+            <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+            <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+
+            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    </head>
+
+    <body ng-app="WormChat">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="starter-template">
+                <h1>The great WormChat</h1>
+                <p class="lead">C&Pasted from Bootstrap examples</p>
+            </div>
+
+            <h3>Three unequal columns</h3>
+            <p>Get three columns <strong>starting at desktops and scaling to large desktops</strong> of various widths. Remember, grid columns should add up to twelve for a single horizontal block. More than that, and columns start stacking no matter the viewport.</p>
+            <div class="row" ng-controller="RoomController">
+                <div class="col-md-4">
+                    <ul ng-repeat="r in rooms">
+                        <li>{{r.name}}</li>
+                    </ul>
+                </div>
+                <div class="col-md-8" ng-controller="MessageBoardController">
+                    <div id="chat" ng-repeat="msg in messages | limitTo:-4">
+                        <div class="{{msg.who}}-msg">{{msg.time}}<br/>
+                            <strong>{{msg.user}} says: </strong>{{msg.text}}<br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer" class="row">
+                <form ng-submit="submitMsg()">
+                    <input type="text" name="chat" id="textField" ng-model="inputText"
+                    placeholder="Obi-Wan says..." class="ng-pristine ng-valid input-block-level" />
+                    <input type="button" class="btn btn-primary" id="saySomething" value="Submit" ng-click="submitMsg()" />
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>

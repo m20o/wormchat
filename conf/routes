@@ -3,12 +3,19 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.ChatApplication.index
-GET     /chatFeed/:room             controllers.ChatApplication.chatFeed(room: String)
-POST    /chat                       controllers.ChatApplication.postMessage
+GET         /home                       controllers.ui.MainApplication.index
+
+# API
+GET         /api/room                   controllers.RoomApi.list
+GET         /api/room/:room/feed        controllers.RoomApi.feed(room: String)
+
+###
+GET         /                           controllers.ChatApplication.index
+GET         /chatFeed/:room             controllers.ChatApplication.chatFeed(room: String)
+POST        /chat                       controllers.ChatApplication.postMessage
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file         controllers.Assets.at(path="/public", file)
+GET         /assets/*file               controllers.Assets.at(path="/public", file)
 
 # WebJars support
-GET        /webjars/*file        controllers.WebJarAssets.at(file)
+GET         /webjars/*file              controllers.WebJarAssets.at(file)
